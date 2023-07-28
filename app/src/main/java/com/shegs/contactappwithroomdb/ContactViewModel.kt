@@ -92,7 +92,7 @@ class ContactViewModel(
                     isAddingContact = true
                 ) }
             }
-            is ContactEvent.SortContact -> {
+            is ContactEvent.SortContacts -> {
                 _sortType.value = event.sortType
             }
         }

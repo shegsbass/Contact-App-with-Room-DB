@@ -13,7 +13,7 @@ interface ContactDao {
     suspend fun upsertContact(contact: Contact)
 
     @Delete
-    suspend fun deletecontact(contact: Contact)
+    suspend fun deleteContact(contact: Contact)
 
     @Query ("SELECT * FROM contact ORDER BY firstName ASC")
     fun getContactsOrderedByFirstName(): Flow<List<Contact>>

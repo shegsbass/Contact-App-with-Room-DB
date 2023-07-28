@@ -24,7 +24,7 @@ fun AddContactDialog(
     modifier: Modifier = Modifier
 ){
     AlertDialog(
-        modifier = modifier ,
+        modifier = modifier,
         onDismissRequest = { onEvent(ContactEvent.HideDialog) },
         title = {
             Text(

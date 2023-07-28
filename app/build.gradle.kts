@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.shegs.contactappwithroomdb"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -31,11 +31,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -69,6 +71,13 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     val room_version = "2.5.2"
+
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+
+    // Add the Room ktx artifact for Coroutine support
+    implementation ("androidx.room:room-ktx:$room_version")
 }
